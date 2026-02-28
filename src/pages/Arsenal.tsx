@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import LazyVideo from '../components/ui/LazyVideo';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,13 +76,9 @@ export default function Arsenal() {
                     >
                         <div className="w-full h-full relative rounded-2xl overflow-hidden border border-white/10 group-hover:border-emerald-glow/50 transition-colors shadow-2xl bg-studio-dark">
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
-                            <video
+                            <LazyVideo
                                 src={card.video}
-                                className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
+                                className="transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
                             />
 
                             {/* Overlay Glass Panel */}

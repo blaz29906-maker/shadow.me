@@ -37,6 +37,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     loop
                     muted
                     playsInline
+                    preload="auto"
                     className="w-full h-full object-cover opacity-60"
                 />
                 {/* Global Film Grain opacity 0.04 */}

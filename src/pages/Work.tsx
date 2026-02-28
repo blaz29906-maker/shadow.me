@@ -1,7 +1,7 @@
 import React from 'react';
 import MagneticButton from '../components/ui/MagneticButton';
+import LazyVideo from '../components/ui/LazyVideo';
 import VideoCard from '../components/ui/VideoCard';
-import { Play } from 'lucide-react';
 
 const TRAFFIC_VIDEOS = [
     { views: '1M', videoSrc: '/videos/1.mp4' },
@@ -163,13 +163,9 @@ export default function Work() {
                             '/videos/ads/6.mp4'
                         ].map((src, idx) => (
                             <div key={`c1-${idx}`} className="w-[400px] sm:w-[500px] lg:w-[600px] shrink-0 aspect-[16/9] bg-studio-dark border border-white/5 rounded-xl overflow-hidden relative group cursor-pointer hover:border-emerald-glow/50 transition-colors duration-500 shadow-xl">
-                                <video
+                                <LazyVideo
                                     src={src}
-                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                                    muted
-                                    autoPlay
-                                    loop
-                                    playsInline
+                                    className="opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                                 />
                                 {/* Progress Bar Container */}
                                 <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black/80 to-transparent flex items-end px-6 pb-4">
@@ -190,13 +186,9 @@ export default function Work() {
                             '/videos/ads/6.mp4'
                         ].map((src, idx) => (
                             <div key={`c2-${idx}`} className="w-[400px] sm:w-[500px] lg:w-[600px] shrink-0 aspect-[16/9] bg-studio-dark border border-white/5 rounded-xl overflow-hidden relative group cursor-pointer hover:border-emerald-glow/50 transition-colors duration-500 shadow-xl">
-                                <video
+                                <LazyVideo
                                     src={src}
-                                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                                    muted
-                                    autoPlay
-                                    loop
-                                    playsInline
+                                    className="opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                                 />
                                 {/* Progress Bar Container */}
                                 <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black/80 to-transparent flex items-end px-6 pb-4">

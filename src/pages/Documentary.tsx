@@ -1,6 +1,7 @@
 import React from 'react';
 import { Play } from 'lucide-react';
 import MagneticButton from '../components/ui/MagneticButton';
+import LazyVideo from '../components/ui/LazyVideo';
 
 const DOCUMENTARIES = [
     {
@@ -33,13 +34,9 @@ export default function Documentary() {
                         <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-colors duration-700 z-10" />
 
                         {doc.video ? (
-                            <video
+                            <LazyVideo
                                 src={doc.video}
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[10s] ease-linear"
+                                className="transform scale-100 group-hover:scale-105 transition-transform duration-[10s] ease-linear"
                             />
                         ) : (
                             <img

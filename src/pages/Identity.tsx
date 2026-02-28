@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyVideo from '../components/ui/LazyVideo';
 
 const CAROUSEL_ITEMS = [
     { video: '/videos/identity/_model_googleveo31_4k_202601270501.mp4', width: 600, height: 337 },
@@ -33,14 +34,9 @@ export default function Identity() {
                     {CAROUSEL_ITEMS.map((item, idx) => (
                         <div key={`c1-g1-${idx}`} className="w-[400px] sm:w-[500px] lg:w-[600px] xl:w-[800px] shrink-0 relative aspect-video overflow-hidden rounded group bg-studio-dark cursor-pointer shadow-lg border border-white/5">
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
-                            <video
+                            <LazyVideo
                                 src={item.video}
-                                className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                preload="auto"
+                                className="transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
                             />
                         </div>
                     ))}
@@ -48,14 +44,9 @@ export default function Identity() {
                     {CAROUSEL_ITEMS.map((item, idx) => (
                         <div key={`c1-g2-${idx}`} className="w-[400px] sm:w-[500px] lg:w-[600px] xl:w-[800px] shrink-0 relative aspect-video overflow-hidden rounded group bg-studio-dark cursor-pointer shadow-lg border border-white/5">
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
-                            <video
+                            <LazyVideo
                                 src={item.video}
-                                className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                preload="auto"
+                                className="transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
                             />
                         </div>
                     ))}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe } from 'lucide-react';
+import LazyVideo from '../components/ui/LazyVideo';
 
 const PORTFOLIO_ITEMS = [
     {
@@ -53,13 +54,9 @@ export default function WebDesign() {
                         key={idx}
                         className="aspect-video w-full rounded-lg overflow-hidden bg-zinc-900 border border-white/10 relative group transition-all duration-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:border-[#10B981]/50 cursor-pointer flex flex-col justify-end p-6"
                     >
-                        <video
+                        <LazyVideo
                             src={item.video}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+                            className="absolute inset-0 opacity-70 group-hover:opacity-100 transition-opacity duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
