@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LazyVideo from '../components/ui/LazyVideo';
+import ScrollReveal from '../components/ui/ScrollReveal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,33 +65,34 @@ export default function Arsenal() {
 
             {/* Perfect Center Grid for 8 Vertical items */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[1600px]">
-                {UGC_REELS.map((card) => (
-                    <div
-                        key={card.id}
-                        onMouseMove={handleMouseMove}
-                        onMouseLeave={handleMouseLeave}
-                        className="relative group cursor-pointer w-full"
-                        style={{
-                            aspectRatio: '9/16'
-                        }}
-                    >
-                        <div className="w-full h-full relative rounded-2xl overflow-hidden border border-white/10 group-hover:border-emerald-glow/50 transition-colors shadow-2xl bg-studio-dark">
-                            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
-                            <LazyVideo
-                                src={card.video}
-                                className="transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
-                            />
+                {UGC_REELS.map((card, idx) => (
+                    <ScrollReveal key={card.id} delay={idx * 100}>
+                        <div
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                            className="relative group cursor-pointer w-full"
+                            style={{
+                                aspectRatio: '9/16'
+                            }}
+                        >
+                            <div className="w-full h-full relative rounded-2xl overflow-hidden border border-white/10 group-hover:border-emerald-glow/50 transition-colors shadow-2xl bg-studio-dark">
+                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+                                <LazyVideo
+                                    src={card.video}
+                                    className="transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
+                                />
 
-                            {/* Overlay Glass Panel */}
-                            <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-[2px]">
-                                <p className="text-emerald-glow text-xs font-heading tracking-widest uppercase mb-1">{card.category}</p>
-                                <h3 className="text-white text-xl font-heading leading-tight">{card.title}</h3>
+                                {/* Overlay Glass Panel */}
+                                <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black via-black/80 to-transparent z-20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-[2px]">
+                                    <p className="text-emerald-glow text-xs font-heading tracking-widest uppercase mb-1">{card.category}</p>
+                                    <h3 className="text-white text-xl font-heading leading-tight">{card.title}</h3>
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Soft Shadow Base */}
-                        <div className="absolute -bottom-10 left-[10%] w-[80%] h-4 bg-emerald-glow/30 blur-2xl rounded-[100%] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    </div>
+                            {/* Soft Shadow Base */}
+                            <div className="absolute -bottom-10 left-[10%] w-[80%] h-4 bg-emerald-glow/30 blur-2xl rounded-[100%] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        </div>
+                    </ScrollReveal>
                 ))}
             </div>
 

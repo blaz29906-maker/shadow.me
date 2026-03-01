@@ -12,7 +12,7 @@ import Pricing from './pages/Pricing';
 import Architect from './pages/Architect';
 import Footer from './components/layout/Footer';
 import CustomCursor from './components/ui/CustomCursor';
-import FadeIn from './components/ui/FadeIn';
+import ScrollReveal from './components/ui/ScrollReveal';
 
 function App() {
     return (
@@ -20,20 +20,20 @@ function App() {
             <CustomCursor />
             <Layout>
                 <div className="flex flex-col w-full relative z-10">
-                    <section id="home"><FadeIn><Hero /></FadeIn></section>
+                    <section id="home"><ScrollReveal immediate={true}><Hero /></ScrollReveal></section>
                     <div className="flex flex-col gap-32 lg:gap-48 mt-32 lg:mt-48">
-                        <FadeIn><Work /></FadeIn>
-                        <section id="ugc"><FadeIn><Arsenal /></FadeIn></section>
-                        <section id="cinematics"><FadeIn><Identity /></FadeIn></section>
-                        <section id="documentary"><FadeIn><Documentary /></FadeIn></section>
-                        <FadeIn><WebDesign /></FadeIn>
-                        <section id="services"><FadeIn><Services /></FadeIn></section>
-                        <section id="packages"><FadeIn><Pricing /></FadeIn></section>
-                        <section id="testimonials"><FadeIn><Testimonials /></FadeIn></section>
-                        <section id="director"><FadeIn><Architect /></FadeIn></section>
+                        <ScrollReveal><Work /></ScrollReveal>
+                        <section id="ugc"><ScrollReveal><Arsenal /></ScrollReveal></section>
+                        <section id="cinematics"><ScrollReveal><Identity /></ScrollReveal></section>
+                        <section id="documentary"><ScrollReveal><Documentary /></ScrollReveal></section>
+                        <ScrollReveal><WebDesign /></ScrollReveal>
+                        <section id="services"><ScrollReveal><Services /></ScrollReveal></section>
+                        <section id="packages"><ScrollReveal><Pricing /></ScrollReveal></section>
+                        <section id="testimonials"><ScrollReveal><Testimonials /></ScrollReveal></section>
+                        <section id="director"><ScrollReveal><Architect /></ScrollReveal></section>
                     </div>
                 </div>
-                <FadeIn><Footer /></FadeIn>
+                <ScrollReveal><Footer /></ScrollReveal>
             </Layout>
         </>
     );

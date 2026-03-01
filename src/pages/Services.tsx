@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
+import ScrollReveal from '../components/ui/ScrollReveal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,43 +82,44 @@ export default function Services() {
                 {SERVICES.map((item, idx) => {
                     const isHovered = hoveredIdx === idx;
                     return (
-                        <div
-                            key={idx}
-                            id={item.title === "WEB ARCHITECTURE & UI/UX" ? "web-design" : undefined}
-                            className="w-full border-b border-white/10 py-8 md:py-12 cursor-pointer group transition-colors duration-500 hover:bg-white/[0.02] px-4 md:px-8 relative overflow-hidden"
-                            onMouseEnter={() => setHoveredIdx(idx)}
-                            onMouseLeave={() => setHoveredIdx(null)}
-                        >
-                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                <h3 className={`text-3xl lg:text-5xl font-heading uppercase tracking-tighter font-bold transition-colors duration-500 w-[90%] break-words ${isHovered ? 'text-[#10B981]' : 'text-white'}`}>
-                                    {item.title}
-                                </h3>
-                                <div className={`hidden md:flex p-4 rounded-full border border-white/20 transition-all duration-500 ${isHovered ? 'bg-[#10B981] border-[#10B981] rotate-45 scale-110' : 'bg-transparent text-white'}`}>
-                                    <ArrowUpRight className={`w-6 h-6 transition-colors duration-500 ${isHovered ? 'text-black' : 'text-white'}`} />
-                                </div>
-                            </div>
-
+                        <ScrollReveal key={idx} delay={idx * 100}>
                             <div
-                                className={`grid transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${isHovered ? 'grid-rows-[1fr] opacity-100 mt-6 md:mt-10' : 'grid-rows-[0fr] opacity-0'}`}
+                                id={item.title === "WEB ARCHITECTURE & UI/UX" ? "web-design" : undefined}
+                                className="w-full border-b border-white/10 py-8 md:py-12 cursor-pointer group transition-colors duration-500 hover:bg-white/[0.02] px-4 md:px-8 relative overflow-hidden"
+                                onMouseEnter={() => setHoveredIdx(idx)}
+                                onMouseLeave={() => setHoveredIdx(null)}
                             >
-                                <div className="overflow-hidden flex flex-col xl:flex-row gap-6 xl:gap-24 justify-between">
-                                    <p className="text-xl lg:text-2xl text-white/70 font-body max-w-2xl leading-relaxed">
-                                        {item.desc}
-                                    </p>
+                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                    <h3 className={`text-3xl lg:text-5xl font-heading uppercase tracking-tighter font-bold transition-colors duration-500 w-[90%] break-words ${isHovered ? 'text-[#10B981]' : 'text-white'}`}>
+                                        {item.title}
+                                    </h3>
+                                    <div className={`hidden md:flex p-4 rounded-full border border-white/20 transition-all duration-500 ${isHovered ? 'bg-[#10B981] border-[#10B981] rotate-45 scale-110' : 'bg-transparent text-white'}`}>
+                                        <ArrowUpRight className={`w-6 h-6 transition-colors duration-500 ${isHovered ? 'text-black' : 'text-white'}`} />
+                                    </div>
+                                </div>
 
-                                    <div className="flex flex-wrap items-center gap-3 w-full xl:max-w-xl">
-                                        {item.subServices.map((sub, sIdx) => (
-                                            <div
-                                                key={sIdx}
-                                                className="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm shadow-sm transition-all duration-300 hover:bg-[#10B981]/10 hover:border-[#10B981]/50 text-gray-300 hover:text-white"
-                                            >
-                                                <span className="text-sm font-body font-medium uppercase tracking-wider">{sub}</span>
-                                            </div>
-                                        ))}
+                                <div
+                                    className={`grid transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${isHovered ? 'grid-rows-[1fr] opacity-100 mt-6 md:mt-10' : 'grid-rows-[0fr] opacity-0'}`}
+                                >
+                                    <div className="overflow-hidden flex flex-col xl:flex-row gap-6 xl:gap-24 justify-between">
+                                        <p className="text-xl lg:text-2xl text-white/70 font-body max-w-2xl leading-relaxed">
+                                            {item.desc}
+                                        </p>
+
+                                        <div className="flex flex-wrap items-center gap-3 w-full xl:max-w-xl">
+                                            {item.subServices.map((sub, sIdx) => (
+                                                <div
+                                                    key={sIdx}
+                                                    className="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm shadow-sm transition-all duration-300 hover:bg-[#10B981]/10 hover:border-[#10B981]/50 text-gray-300 hover:text-white"
+                                                >
+                                                    <span className="text-sm font-body font-medium uppercase tracking-wider">{sub}</span>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </ScrollReveal>
                     );
                 })}
             </div>
