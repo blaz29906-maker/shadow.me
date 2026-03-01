@@ -114,16 +114,18 @@ export default function Home() {
             </section>
 
             {/* Trust Bar (Scroll Ticker) */}
-            <ScrollTicker
-                speed={40}
-                items={[
-                    <span className="text-white/80 font-heading text-lg tracking-widest uppercase">30M+ Organic Views Engineered</span>,
-                    <span className="text-white/80 font-heading text-lg tracking-widest uppercase">High-Retention Pacing</span>,
-                    <span className="text-white/80 font-heading text-lg tracking-widest uppercase">Studio-Grade AI Cinematics</span>,
-                    <span className="text-white/80 font-heading text-lg tracking-widest uppercase">Zero Templates Used</span>,
-                    <span className="text-white/80 font-heading text-lg tracking-widest uppercase">Psychological VSLs</span>,
-                ]}
-            />
+            <div className="mt-20 md:mt-0">
+                <ScrollTicker
+                    speed={40}
+                    items={[
+                        <span className="text-white/80 font-heading text-lg tracking-widest uppercase">30M+ Organic Views Engineered</span>,
+                        <span className="text-white/80 font-heading text-lg tracking-widest uppercase">High-Retention Pacing</span>,
+                        <span className="text-white/80 font-heading text-lg tracking-widest uppercase">Studio-Grade AI Cinematics</span>,
+                        <span className="text-white/80 font-heading text-lg tracking-widest uppercase">Zero Templates Used</span>,
+                        <span className="text-white/80 font-heading text-lg tracking-widest uppercase">Psychological VSLs</span>,
+                    ]}
+                />
+            </div>
 
 
         </div>
