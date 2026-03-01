@@ -47,7 +47,7 @@ export default function Architect() {
                 </h3>
 
                 <p className="text-base md:text-lg lg:text-xl text-gray-400 font-body leading-relaxed max-w-3xl px-4 md:px-0 drop-shadow-sm">
-                    Gulraiz Hassan is an AI Creative Technologist and Viral Content Visionary. Currently advancing his expertise with a BS in Artificial Intelligence at Riphah International University, backed by specialized Coursera certifications. He is the architect behind over 30,000,000+ organic views, mastering the intersection of narrative pacing, algorithmic optimization, and high-fidelity AI design. He doesn't just edit content; he engineers digital ecosystems that command absolute attention.
+                    Gulraiz Hassan is an AI Creative Technologist and Viral Content Visionary. Armed with a BS in Artificial Intelligence from Riphah International University and backed by specialized Coursera certifications, his technical foundation is absolute. He is the architect behind over 30,000,000+ organic views, mastering the intersection of narrative pacing, algorithmic optimization, and high-fidelity AI design. He doesn't just edit content; he engineers digital ecosystems that command absolute attention.
                 </p>
 
             </div>
