@@ -1,5 +1,6 @@
 import React from 'react';
 import { Instagram, Youtube } from 'lucide-react';
+import DraggableMarquee from '../ui/DraggableMarquee';
 
 const TECH_STACK = "ADOBE AFTER EFFECTS • MIDJOURNEY V6 • REACT.JS • UNREAL ENGINE • TAILWIND CSS • RUNWAY GEN-2 • ELEVENLABS • DAVINCI RESOLVE • ADOBE AFTER EFFECTS • MIDJOURNEY V6 • REACT.JS • UNREAL ENGINE • TAILWIND CSS • RUNWAY GEN-2 • ELEVENLABS • DAVINCI RESOLVE";
 
@@ -9,17 +10,11 @@ export default function Footer() {
 
             {/* Tech Stack Marquee (Slim Profile) */}
             <div className="w-full flex overflow-hidden border-b border-white/5 py-4 bg-white/[0.02]">
-                <div className="flex whitespace-nowrap animate-[marquee_30s_linear_infinite]">
+                <DraggableMarquee speed={0.8} direction="left" contentClassName="flex items-center">
                     <span className="text-xs md:text-sm font-heading uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/70 mx-4 flex-shrink-0">
                         {TECH_STACK}
                     </span>
-                    <span className="text-xs md:text-sm font-heading uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/70 mx-4 flex-shrink-0">
-                        {TECH_STACK}
-                    </span>
-                    <span className="text-xs md:text-sm font-heading uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/70 mx-4 flex-shrink-0">
-                        {TECH_STACK}
-                    </span>
-                </div>
+                </DraggableMarquee>
             </div>
 
             {/* The High-End Editorial Footer */}

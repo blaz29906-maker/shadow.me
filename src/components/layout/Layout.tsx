@@ -38,6 +38,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     muted
                     playsInline
                     preload="auto"
+                    controlsList="nodownload"
+                    onContextMenu={(e) => e.preventDefault()}
                     className="w-full h-full object-cover opacity-60"
                 />
                 {/* Global Film Grain opacity 0.04 */}

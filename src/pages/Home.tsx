@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import MagneticButton from '../components/ui/MagneticButton';
 import ScrollTicker from '../components/ui/ScrollTicker';
+import DraggableMarquee from '../components/ui/DraggableMarquee';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
 export default function Home() {
@@ -58,29 +59,16 @@ export default function Home() {
 
                     {/* AI Tools Strip */}
                     <div className="mb-10 w-full overflow-hidden rounded border border-emerald-glow/50 bg-black/40 backdrop-blur-md box-glow-emerald relative">
-                        <div className="flex w-fit relative animate-marquee hover:[animation-play-state:paused] hover:border-emerald-glow hover:bg-black/60 transition-colors duration-500 cursor-default py-3">
-                            {/* Group 1 */}
-                            <div className="flex items-center whitespace-nowrap px-6 flex-shrink-0">
-                                <span className="text-white font-heading font-medium tracking-widest uppercase mr-8">EXPERT IN</span>
-                                {['ChatGPT', 'Grok', 'Veo 3', 'Kling', 'Seedance', 'Gemini', 'Higgsfield', 'Meshy', 'Nano Banana Pro', 'Claude AI'].map((tool) => (
-                                    <React.Fragment key={`${tool}-1`}>
-                                        <span className="text-emerald-glow font-heading text-lg mx-6">•</span>
-                                        <span className="text-white/90 font-body font-medium text-lg tracking-wide">{tool}</span>
-                                    </React.Fragment>
-                                ))}
-                            </div>
-                            {/* Group 2 (Duplicate for seamless loop) */}
-                            <div className="flex items-center whitespace-nowrap px-6 flex-shrink-0">
-                                <span className="text-emerald-glow font-heading text-lg mx-6 max-2xl:hidden">•</span>
-                                <span className="text-white font-heading font-medium tracking-widest uppercase mr-8">EXPERT IN</span>
-                                {['ChatGPT', 'Grok', 'Veo 3', 'Kling', 'Seedance', 'Gemini', 'Higgsfield', 'Meshy', 'Nano Banana Pro', 'Claude AI'].map((tool) => (
-                                    <React.Fragment key={`${tool}-2`}>
-                                        <span className="text-emerald-glow font-heading text-lg mx-6">•</span>
-                                        <span className="text-white/90 font-body font-medium text-lg tracking-wide">{tool}</span>
-                                    </React.Fragment>
-                                ))}
-                            </div>
-                        </div>
+                        <DraggableMarquee speed={1} direction="left" className="py-3 hover:border-emerald-glow hover:bg-black/60 transition-colors duration-500" contentClassName="px-6 flex items-center">
+                            <span className="text-white font-heading font-medium tracking-widest uppercase mr-8">EXPERT IN</span>
+                            {['ChatGPT', 'Grok', 'Veo 3', 'Kling', 'Seedance', 'Gemini', 'Higgsfield', 'Meshy', 'Nano Banana Pro', 'Claude AI'].map((tool) => (
+                                <React.Fragment key={`${tool}-1`}>
+                                    <span className="text-emerald-glow font-heading text-lg mx-6">•</span>
+                                    <span className="text-white/90 font-body font-medium text-lg tracking-wide">{tool}</span>
+                                </React.Fragment>
+                            ))}
+                            <span className="text-emerald-glow font-heading text-lg mx-6">•</span>
+                        </DraggableMarquee>
                     </div>
 
                     {/* Subheadline */}

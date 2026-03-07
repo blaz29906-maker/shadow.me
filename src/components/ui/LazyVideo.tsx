@@ -52,6 +52,8 @@ export default function LazyVideo({ src, className, threshold = 0.5, ...props }:
             muted
             loop
             playsInline
+            controlsList="nodownload"
+            onContextMenu={(e) => e.preventDefault()}
             {...props}
         />
     );

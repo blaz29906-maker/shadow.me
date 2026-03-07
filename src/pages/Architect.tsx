@@ -1,6 +1,7 @@
 import React from 'react';
 import { Instagram, Linkedin, Twitter, Award } from 'lucide-react';
 import FadeIn from '../components/ui/FadeIn';
+import DraggableMarquee from '../components/ui/DraggableMarquee';
 
 const CREDENTIALS = [
     { institution: 'Google', name: 'Google AI Professional Certificate' },
@@ -77,6 +78,45 @@ export default function Architect() {
                             </div>
                         </FadeIn>
                     ))}
+                </div>
+            </div>
+
+            {/* 3. CERTIFICATES SHOWCASE */}
+            <div className="w-full max-w-[1600px] mx-auto mt-32">
+                <h4 className="text-center font-heading text-sm uppercase tracking-[0.3em] text-[#10B981] mb-12">
+                    VERIFIED CERTIFICATIONS
+                </h4>
+
+                <div className="w-full relative overflow-hidden flex py-4">
+                    {/* Left/Right Fade Edges */}
+                    <div className="absolute top-0 left-0 w-8 md:w-32 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+                    <div className="absolute top-0 right-0 w-8 md:w-32 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+
+                    <DraggableMarquee speed={0.8} direction="left" contentClassName="gap-6 sm:gap-8 px-6 sm:px-8">
+                        {[
+                            { title: 'AI Professional Certificate', issuer: 'Google', date: '2024' },
+                            { title: 'AI Product Manager', issuer: 'IBM', date: '2023' },
+                            { title: 'Blockchain Specialization', issuer: 'INSEAD', date: '2023' },
+                            { title: 'Data Analytics Specialization', issuer: 'Google', date: '2022' },
+                            { title: 'Agentic AI for Leaders', issuer: 'DeepLearning.AI', date: '2024' },
+                            { title: 'Prompt Engineering', issuer: 'Vanderbilt', date: '2024' },
+                        ].map((cert, idx) => (
+                            <div key={`cert-${idx}`} className="w-[300px] sm:w-[380px] shrink-0 aspect-[4/3] bg-white/[0.02] border border-white/10 rounded-xl flex flex-col items-center justify-center p-8 relative overflow-hidden group hover:border-[#10B981]/50 hover:bg-white/[0.04] transition-all duration-500 shadow-2xl cursor-pointer">
+                                {/* Background Glow */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-[#10B981]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+                                {/* Certificate Placeholder Icon */}
+                                <Award className="w-12 h-12 text-[#10B981]/80 mb-6 group-hover:scale-110 group-hover:text-[#10B981] transition-all duration-500 pointer-events-none" />
+
+                                <h5 className="font-heading text-lg text-white font-medium text-center mb-2 pointer-events-none">{cert.title}</h5>
+                                <p className="font-body text-sm text-gray-400 tracking-wider uppercase pointer-events-none">{cert.issuer} • {cert.date}</p>
+
+                                {/* Corner Accents */}
+                                <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-white/10 group-hover:border-[#10B981]/50 transition-colors pointer-events-none rounded-tl-xl" />
+                                <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-white/10 group-hover:border-[#10B981]/50 transition-colors pointer-events-none rounded-br-xl" />
+                            </div>
+                        ))}
+                    </DraggableMarquee>
                 </div>
             </div>
 

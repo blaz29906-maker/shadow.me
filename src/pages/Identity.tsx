@@ -1,5 +1,6 @@
 import React from 'react';
 import LazyVideo from '../components/ui/LazyVideo';
+import DraggableMarquee from '../components/ui/DraggableMarquee';
 
 const CAROUSEL_ITEMS = [
     { video: '/videos/identity/_model_googleveo31_4k_202601270501.mp4', width: 600, height: 337 },
@@ -28,29 +29,18 @@ export default function Identity() {
 
 
             {/* Cinematic Strip Section */}
-            <div className="w-full flex flex-col gap-6 overflow-hidden py-12 md:py-16 mt-8">
-                <div className="flex gap-4 sm:gap-6 px-4 animate-marquee hover:[animation-play-state:paused] w-max">
-                    {/* Group 1 */}
+            <div className="w-full flex overflow-hidden py-12 md:py-16 mt-8">
+                <DraggableMarquee speed={1} direction="left" contentClassName="gap-4 sm:gap-6 pr-4 sm:pr-6">
                     {CAROUSEL_ITEMS.map((item, idx) => (
                         <div key={`c1-g1-${idx}`} className="w-[400px] sm:w-[500px] lg:w-[600px] xl:w-[800px] shrink-0 relative aspect-video overflow-hidden rounded group bg-studio-dark cursor-pointer shadow-lg border border-white/5">
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
                             <LazyVideo
                                 src={item.video}
-                                className="transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
+                                className="transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105 pointer-events-none"
                             />
                         </div>
                     ))}
-                    {/* Group 2 (Duplicate for loop) */}
-                    {CAROUSEL_ITEMS.map((item, idx) => (
-                        <div key={`c1-g2-${idx}`} className="w-[400px] sm:w-[500px] lg:w-[600px] xl:w-[800px] shrink-0 relative aspect-video overflow-hidden rounded group bg-studio-dark cursor-pointer shadow-lg border border-white/5">
-                            <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
-                            <LazyVideo
-                                src={item.video}
-                                className="transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
-                            />
-                        </div>
-                    ))}
-                </div>
+                </DraggableMarquee>
             </div>
         </div>
     );
